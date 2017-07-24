@@ -14,7 +14,7 @@ In this repo, you'll find:
 
 You'll need one of these, get one here: [https://www.strivesdk.com](https://www.strivesdk.com). 
 
-:rotating_light: :rotating_light: We'll only be offering free SDK key for the next 24 hours :rotating_light: :rotating_light:
+:rotating_light: :rotating_light: We'll only be offering *free SDK keys* for the next 24 hours :rotating_light: :rotating_light:
 
 
 ## Guide
