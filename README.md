@@ -16,7 +16,7 @@ You'll need one of these, get one here: [https://www.strivesdk.com](https://www.
 
 ## Guide
 
-Follow along with your own project, or use the Tutorial project we've setup. You can find the tutorial project at `tutorial_app/StriveCameraTutorial.xcodeproj`.
+Follow along with your own project, or use the Tutorial project we've setup. Carry on reading for instructions on getting started!
 
 ## Installation
 
@@ -26,7 +26,8 @@ Follow along with your own project, or use the Tutorial project we've setup. You
 git clone https://github.com/GetLightBite/StriveSDK_iOS.git
 open StriveSDK_ios
 ```
-You'll find the framework at: `demo_app/Strive.framework`
+- You'll find our framework at: `demo_app/Strive.framework`
+- You can find the tutorial project at `tutorial_app/StriveCameraTutorial.xcodeproj`.
 
 
 2. Drag `Strive.framework` into your project. Make sure "Copy items if needed" is checked. It might take like 10 seconds for the framework to appear in the project directory.
