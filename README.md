@@ -14,6 +14,9 @@ In this repo, you'll find:
 
 You'll need one of these, get one here: [https://www.strivesdk.com](https://www.strivesdk.com). 
 
+:rotating_light: :rotating_light: We'll only be offering free SDK key for the next 24 hours :rotating_light: :rotating_light:
+
+
 ## Guide
 
 Follow along with your own project, or use the Tutorial project we've setup (more info below).
@@ -52,7 +55,7 @@ You'll need an SDK Key, you can get one here: [https://www.strivesdk.com](https:
 
 **Objective-C**
 ```objective-c
-@import Strive;
+@import Strive; // line 11 in tutorial app
 
 ...
 
@@ -60,7 +63,7 @@ You'll need an SDK Key, you can get one here: [https://www.strivesdk.com](https:
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // ...other initialization code
 
-    NSString *striveKey = @"INSERT_KEY_HERE";
+    NSString *striveKey = @"INSERT_KEY_HERE"; // line 29 in tutorial app
     [StriveInstance setupWithKey:striveKey];
     [[StriveInstance shared] prepare]; // optional, speeds up filter setup later
 
@@ -104,7 +107,8 @@ a) Import Strive and create a StriveInstance property
 
 // other properties
 
-@property (nonatomic) StriveInstance *strive; // line 27 in tutorial app
+@property (nonatomic) StriveInstance *strive; // line 25 in tutorial app
+
 
 @end
 
@@ -119,7 +123,7 @@ b) Initialize your class' StriveInstance property. This should be done as early 
     self = [super init];
     if (self) {
         // ... initializing other things
-        self.strive = [StriveInstance shared]; // line 43
+        self.strive = [StriveInstance shared]; // add this at line 43
     }
     return self;
 }
@@ -158,9 +162,10 @@ d) Start passing frames to Strive to see augmented reality in action! Specify wh
 didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
        fromConnection:(AVCaptureConnection *)connection
 {
-    int selectedIndex = (int)self.selectedIndex;
-    
-    [self.strive applyFilter:STVFilterButterfly
+    STVFilter s = STVFilterButterfly; // don't worry, we have more effects ;)
+    // If you're following the tutorial, the next line lets users pick the filter
+    // STVFilter s = self.selectedIndex;
+    [self.strive applyFilter:s
                  sampleBuffer:sampleBuffer
                    completion:^(CMSampleBufferRef sampleBuffer) {
                        [self.layer enqueueSampleBuffer:sampleBuffer];
