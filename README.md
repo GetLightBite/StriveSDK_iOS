@@ -90,7 +90,7 @@ Go to the controller where you configured your camera settings.
 
 > In the tutorial app, this would be SessionHandler.m. I've included line numbers in the comments of the sample code below
 
-:rotating_light: :rotating_light: These instructions should work if you're using AVFoundation or any library that's a light wrapper (like OpenTok's camera implementation). If not, shoot me a not at (sebastian x strivesdk x com) and I'll be happy to help. :rotating_light: :rotating_light:
+:rotating_light: :rotating_light: These instructions should work if you're using AVFoundation or any library that's a light wrapper (like OpenTok's camera implementation). If not, shoot me a note at (sebastian x strivesdk x com) and I'll be happy to help. :rotating_light: :rotating_light:
 
 a) Import Strive and create a StriveInstance property
 
