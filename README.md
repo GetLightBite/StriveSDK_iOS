@@ -1,6 +1,6 @@
 ![Alt Text](http://imgur.com/0LBJMTL.gif)
 
-# Strive
+# StriveSDK: Augmented Reality Face Filters SDK for iOS
 
 StriveSDK for iOS makes it dead simple to add live effects to your app’s camera experience. With one line of code, you’ll help users look instantly more photogenic, creative, and comfortable with the camera.
 
@@ -91,7 +91,7 @@ Go to the controller where you configured your camera settings.
 
 > In the tutorial app, this would be SessionHandler.m. I've included line numbers in the comments of the sample code below
 
-:rotating_light: :rotating_light: These instructions should work if you're using AVFoundation or any library that's a light wrapper (like OpenTok's camera implementation). If not, shoot me a note at (sebastian x strivesdk x com) and I'll be happy to help. :rotating_light: :rotating_light:
+:rotating_light: :rotating_light: These instructions should work if you're using AVFoundation or any library that's a light wrapper around it (like OpenTok's camera implementation). If not, shoot me a note at (seb x strivesdk x com) and I'll be happy to help. :rotating_light: :rotating_light:
 
 a) Import Strive and create a StriveInstance property
 
