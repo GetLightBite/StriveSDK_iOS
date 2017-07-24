@@ -1,0 +1,6 @@
+framework module Strive {
+  umbrella header "Strive.h"
+
+  export *
+  module * { export * }
+}

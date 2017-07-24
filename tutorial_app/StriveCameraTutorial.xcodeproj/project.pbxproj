@@ -1,0 +1,362 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D66332571F25A1F90087928E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332561F25A1F90087928E /* main.m */; };
+		D663325A1F25A1F90087928E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332591F25A1F90087928E /* AppDelegate.m */; };
+		D663325D1F25A1F90087928E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D663325C1F25A1F90087928E /* ViewController.m */; };
+		D66332601F25A1F90087928E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D663325E1F25A1F90087928E /* Main.storyboard */; };
+		D66332621F25A1F90087928E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66332611F25A1F90087928E /* Assets.xcassets */; };
+		D66332651F25A1F90087928E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66332631F25A1F90087928E /* LaunchScreen.storyboard */; };
+		D66332731F25A2690087928E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332721F25A2690087928E /* WelcomeViewController.m */; };
+		D66332781F25A2730087928E /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332751F25A2730087928E /* CameraController.m */; };
+		D66332791F25A2730087928E /* SessionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332771F25A2730087928E /* SessionHandler.m */; };
+		D663327D1F25A28B0087928E /* AKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D663327C1F25A28B0087928E /* AKPickerView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D66332521F25A1F90087928E /* StriveCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StriveCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66332561F25A1F90087928E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D66332581F25A1F90087928E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D66332591F25A1F90087928E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D663325B1F25A1F90087928E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D663325C1F25A1F90087928E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D663325F1F25A1F90087928E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D66332611F25A1F90087928E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D66332641F25A1F90087928E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D66332661F25A1F90087928E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D66332711F25A2690087928E /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		D66332721F25A2690087928E /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		D66332741F25A2730087928E /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
+		D66332751F25A2730087928E /* CameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraController.m; sourceTree = "<group>"; };
+		D66332761F25A2730087928E /* SessionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionHandler.h; sourceTree = "<group>"; };
+		D66332771F25A2730087928E /* SessionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionHandler.m; sourceTree = "<group>"; };
+		D663327B1F25A28B0087928E /* AKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPickerView.h; sourceTree = "<group>"; };
+		D663327C1F25A28B0087928E /* AKPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPickerView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D663324F1F25A1F90087928E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D66332491F25A1F90087928E = {
+			isa = PBXGroup;
+			children = (
+				D66332541F25A1F90087928E /* StriveCamera */,
+				D66332531F25A1F90087928E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D66332531F25A1F90087928E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D66332521F25A1F90087928E /* StriveCamera.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D66332541F25A1F90087928E /* StriveCamera */ = {
+			isa = PBXGroup;
+			children = (
+				D663327A1F25A27C0087928E /* 3rd Party */,
+				D66332581F25A1F90087928E /* AppDelegate.h */,
+				D66332591F25A1F90087928E /* AppDelegate.m */,
+				D66332741F25A2730087928E /* CameraController.h */,
+				D66332751F25A2730087928E /* CameraController.m */,
+				D66332761F25A2730087928E /* SessionHandler.h */,
+				D66332771F25A2730087928E /* SessionHandler.m */,
+				D663325B1F25A1F90087928E /* ViewController.h */,
+				D663325C1F25A1F90087928E /* ViewController.m */,
+				D66332711F25A2690087928E /* WelcomeViewController.h */,
+				D66332721F25A2690087928E /* WelcomeViewController.m */,
+				D663325E1F25A1F90087928E /* Main.storyboard */,
+				D66332611F25A1F90087928E /* Assets.xcassets */,
+				D66332631F25A1F90087928E /* LaunchScreen.storyboard */,
+				D66332661F25A1F90087928E /* Info.plist */,
+				D66332551F25A1F90087928E /* Supporting Files */,
+			);
+			path = StriveCamera;
+			sourceTree = "<group>";
+		};
+		D66332551F25A1F90087928E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D66332561F25A1F90087928E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D663327A1F25A27C0087928E /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				D663327B1F25A28B0087928E /* AKPickerView.h */,
+				D663327C1F25A28B0087928E /* AKPickerView.m */,
+			);
+			name = "3rd Party";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D66332511F25A1F90087928E /* StriveCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D66332691F25A1F90087928E /* Build configuration list for PBXNativeTarget "StriveCamera" */;
+			buildPhases = (
+				D663324E1F25A1F90087928E /* Sources */,
+				D663324F1F25A1F90087928E /* Frameworks */,
+				D66332501F25A1F90087928E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StriveCamera;
+			productName = StriveCamera;
+			productReference = D66332521F25A1F90087928E /* StriveCamera.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D663324A1F25A1F90087928E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Strive Technologies, Inc.";
+				TargetAttributes = {
+					D66332511F25A1F90087928E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5Y48ZT9Y89;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D663324D1F25A1F90087928E /* Build configuration list for PBXProject "StriveCameraTutorial" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D66332491F25A1F90087928E;
+			productRefGroup = D66332531F25A1F90087928E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D66332511F25A1F90087928E /* StriveCamera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D66332501F25A1F90087928E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D66332651F25A1F90087928E /* LaunchScreen.storyboard in Resources */,
+				D66332621F25A1F90087928E /* Assets.xcassets in Resources */,
+				D66332601F25A1F90087928E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D663324E1F25A1F90087928E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D663327D1F25A28B0087928E /* AKPickerView.m in Sources */,
+				D66332781F25A2730087928E /* CameraController.m in Sources */,
+				D663325D1F25A1F90087928E /* ViewController.m in Sources */,
+				D66332731F25A2690087928E /* WelcomeViewController.m in Sources */,
+				D66332791F25A2730087928E /* SessionHandler.m in Sources */,
+				D663325A1F25A1F90087928E /* AppDelegate.m in Sources */,
+				D66332571F25A1F90087928E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D663325E1F25A1F90087928E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D663325F1F25A1F90087928E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D66332631F25A1F90087928E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D66332641F25A1F90087928E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D66332671F25A1F90087928E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D66332681F25A1F90087928E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D663326A1F25A1F90087928E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5Y48ZT9Y89;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = StriveCamera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.strivetechnologies.StriveCameraTutorial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D663326B1F25A1F90087928E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5Y48ZT9Y89;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = StriveCamera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.strivetechnologies.StriveCameraTutorial;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D663324D1F25A1F90087928E /* Build configuration list for PBXProject "StriveCameraTutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D66332671F25A1F90087928E /* Debug */,
+				D66332681F25A1F90087928E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D66332691F25A1F90087928E /* Build configuration list for PBXNativeTarget "StriveCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D663326A1F25A1F90087928E /* Debug */,
+				D663326B1F25A1F90087928E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D663324A1F25A1F90087928E /* Project object */;
+}
