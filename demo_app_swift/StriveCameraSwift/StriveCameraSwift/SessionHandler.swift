@@ -12,10 +12,10 @@ import UIKit
 class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureMetadataOutputObjectsDelegate {
     let layer = AVSampleBufferDisplayLayer()
     var selectedIndex = 0
-    var captureSession = AVCaptureSession()
+    var captureSession : AVCaptureSession = AVCaptureSession()
     let captureSessionQueue = DispatchQueue(label: "capture_session_queue")
-    let strive = StriveInstance()
-
+    let strive = StriveInstance.shared()
+    var setupCamera = false
     
     func openSession() {
         let deviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInDualCamera, AVCaptureDeviceType.builtInTelephotoCamera,AVCaptureDeviceType.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
@@ -36,8 +36,8 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
         
         let videoDataOutput = AVCaptureVideoDataOutput();
         
-        let settingsDict = [kCVPixelBufferPixelFormatTypeKey as AnyHashable: Int(kCVPixelFormatType_32BGRA)]
-        videoDataOutput.videoSettings = settingsDict
+        videoDataOutput.alwaysDiscardsLateVideoFrames=true
+        videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable : Int(kCVPixelFormatType_32BGRA)]
         videoDataOutput.setSampleBufferDelegate(self, queue: captureSessionQueue)
         
         captureSession.beginConfiguration()
@@ -58,18 +58,19 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
         }
         captureSession.commitConfiguration()
         captureSession.startRunning()
+        setupCamera = true
     }
 
     func start() {
-        if self.captureSession == nil {
-            self.openSession()
-        } else {
+        if setupCamera {
             self.captureSession.startRunning()
+        } else {
+            self.openSession()
         }
     }
 
     func stop() {
-        if self.captureSession != nil {
+        if setupCamera {
             self.captureSession.stopRunning()
         }
     }
@@ -83,10 +84,13 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
         }
         
         let f : STVFilter = STVFilter(rawValue: selectedIndex)!
-        self.strive.apply(f,
-                          sampleBuffer: sampleBuffer) { (CMSampleBuffer) in
-                            self.layer.enqueue(sampleBuffer)
-        }
+        self.strive!.apply(f,
+                           sampleBuffer: sampleBuffer,
+                           completion: { (sbb : CMSampleBuffer?) -> Void in
+                            if (sbb != nil) {
+                                self.layer.enqueue(sbb!)
+                            }
+        })
     }
     
 }

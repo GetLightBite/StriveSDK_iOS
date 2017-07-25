@@ -93,7 +93,7 @@ class CameraController: UIViewController, AKPickerViewDelegate, AKPickerViewData
         
         let layer = self.sessionHandler.layer
         layer.frame = self.view.frame
-        self.view.layer .addSublayer(layer)
+        self.view.layer.addSublayer(layer)
         self.view.layoutIfNeeded()
         
         self.setupPicker()
