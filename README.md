@@ -12,7 +12,7 @@ In this repo, you'll find:
 
 ## Get an SDK Key
 
-You'll need one of these, get one here: [https://www.strivesdk.com](https://www.strivesdk.com). 
+You'll need one of these, get one here: [http://www.strivesdk.com](http://www.strivesdk.com). 
 
 :rotating_light: :rotating_light: We'll only be offering *free SDK keys* for the next 24 hours :rotating_light: :rotating_light:
 
