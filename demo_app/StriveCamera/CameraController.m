@@ -49,12 +49,13 @@
 
 - (void)setupPicker
 {
-    self.pickerView = [[AKPickerView alloc] init];
-    [self.view addSubview:self.pickerView];
 
     if (self.pickerView) {
+        [self.view addSubview:self.pickerView];
         return;
     }
+    self.pickerView = [[AKPickerView alloc] init];
+
     NSInteger pickerHeight = 100;
     NSInteger pickerBottomMargin = 50;
     NSInteger pickerY = self.view.frame.size.height - pickerHeight - pickerBottomMargin;
