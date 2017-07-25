@@ -33,7 +33,7 @@ open StriveSDK_ios
 - You can find the tutorial project at `tutorial_app/StriveCameraTutorial.xcodeproj`. Open it with Xcode, and let's get going!
 
 
-2. Drag `Strive.framework` into your project. Make sure "Copy items if needed" is checked. It might take like 10 seconds for the framework to appear in the project directory.
+2. Drag `Strive.framework` into your project. Make sure "Copy items if needed" is checked. It may take ~10 seconds for the framework to appear in the project directory.
 ![Alt Text](http://imgur.com/RvQLqJf.gif)
 
 
