@@ -55,7 +55,7 @@ You'll need an SDK Key, you can get one here: [https://www.strivesdk.com](https:
 
 **Objective-C**
 ```objective-c
-@import Strive; // line 11 in tutorial app
+@import Strive; // add this at line 11 in tutorial app
 
 ...
 
@@ -63,7 +63,7 @@ You'll need an SDK Key, you can get one here: [https://www.strivesdk.com](https:
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // ...other initialization code
 
-    NSString *striveKey = @"INSERT_KEY_HERE"; // line 29 in tutorial app
+    NSString *striveKey = @"INSERT_KEY_HERE"; // add these lines at line 29 in tutorial app
     [StriveInstance setupWithKey:striveKey];
     [[StriveInstance shared] prepare]; // optional, speeds up filter setup later
 
@@ -80,7 +80,7 @@ import Strive
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // ...other initialization code
 
-    let striveKey = "INSERT_KEY_HERE"
+    let striveKey = "INSERT_KEY_HERE" // add these lines at line 29 in tutorial app
     StriveInsance.setupWithKEy(striveKey)
     StriveInstance.shared.prepare()
 
@@ -107,7 +107,7 @@ a) Import Strive and create a StriveInstance property
 
 // other properties
 
-@property (nonatomic) StriveInstance *strive; // line 25 in tutorial app
+@property (nonatomic) StriveInstance *strive; // add this at line 25 in tutorial app
 
 
 @end
@@ -123,7 +123,7 @@ b) Initialize your class' StriveInstance property. This should be done as early 
     self = [super init];
     if (self) {
         // ... initializing other things
-        self.strive = [StriveInstance shared]; // add this at line 43
+        self.strive = [StriveInstance shared]; // // add this at line 43 in tutorial app
     }
     return self;
 }
