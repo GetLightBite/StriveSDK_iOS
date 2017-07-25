@@ -13,8 +13,6 @@
 @property (nonatomic) SessionHandler *sessionHandler;
 @property (nonatomic) AKPickerView *pickerView;
 @property (nonatomic) NSArray<UIImage *> *pickerImages;
-@property (nonatomic) UILabel *fpsLabel;
-@property (nonatomic) AVAudioPlayer *audioPlayer;
 
 @end
 
@@ -27,7 +25,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resume)
                                                  name:UIApplicationWillEnterForegroundNotification
                                                object:[UIApplication sharedApplication]];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pauseVIdeo)
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pauseVideo)
                                                  name:UIApplicationWillResignActiveNotification
                                                object:[UIApplication sharedApplication]];
     [self resume];
@@ -46,53 +44,56 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self pauseVIdeo];
+    [self pauseVideo];
 }
 
 - (void)setupPicker
 {
-    if (!self.pickerView) {
-        NSInteger pickerHeight = 100;
-        NSInteger pickerBottomMargin = 50;
-        NSInteger pickerY = self.view.frame.size.height - pickerHeight - pickerBottomMargin;
-        CGRect pickerFrame = CGRectMake(0,
-                                        pickerY,
-                                        self.view.frame.size.width,
-                                        pickerHeight);
-        self.pickerView = [[AKPickerView alloc] initWithFrame:pickerFrame];
-        self.pickerView.delegate = self;
-        self.pickerView.dataSource = self;
-
-        UIImageView *selectionImageView = [UIImageView new];
-        NSInteger selectionImageSize = 85;
-        selectionImageView.frame = CGRectMake(0,
-                                              0,
-                                              selectionImageSize,
-                                              selectionImageSize);
-        selectionImageView.image = [UIImage imageNamed:@"selectorCircle"];
-        selectionImageView.center = CGPointMake(self.view.frame.size.width/2,
-                                                selectionImageSize/2 + pickerHeight - selectionImageSize + 5);
-        [self.pickerView addSubview:selectionImageView];
-        
-        self.pickerView.fisheyeFactor = 0.0f;
-        self.pickerView.pickerViewStyle = AKPickerViewStyleFlat;
-        
-        UIImage *monkeyImage = [UIImage imageNamed:@"coveredMouthMonkey"];
-        UIImage *butterfly = [UIImage imageNamed:@"butterflyButton"];
-        UIImage *mehFace = [UIImage imageNamed:@"mehFace"];
-        UIImage *mask = [UIImage imageNamed:@"maskButton"];
-        UIImage *bunny = [UIImage imageNamed:@"rabbit"];
-        UIImage *plane = [UIImage imageNamed:@"planeButton"];
-        UIImage *pizza = [UIImage imageNamed:@"bigNose"];
-        UIImage *water = [UIImage imageNamed:@"bubbleFace"];
-        UIImage *tiger = [UIImage imageNamed:@"tigerFace"];
-        
-        self.pickerImages = @[mehFace, butterfly, mask, bunny, plane, monkeyImage, tiger, water, pizza];
-    }
+    self.pickerView = [[AKPickerView alloc] init];
     [self.view addSubview:self.pickerView];
+
+    if (self.pickerView) {
+        return;
+    }
+    NSInteger pickerHeight = 100;
+    NSInteger pickerBottomMargin = 50;
+    NSInteger pickerY = self.view.frame.size.height - pickerHeight - pickerBottomMargin;
+    CGRect pickerFrame = CGRectMake(0,
+                                    pickerY,
+                                    self.view.frame.size.width,
+                                    pickerHeight);
+    self.pickerView.frame = pickerFrame;
+    self.pickerView.delegate = self;
+    self.pickerView.dataSource = self;
+    
+    UIImageView *selectionImageView = [UIImageView new];
+    NSInteger selectionImageSize = 85;
+    selectionImageView.frame = CGRectMake(0,
+                                          0,
+                                          selectionImageSize,
+                                          selectionImageSize);
+    selectionImageView.image = [UIImage imageNamed:@"selectorCircle"];
+    selectionImageView.center = CGPointMake(self.view.frame.size.width/2,
+                                            selectionImageSize/2 + pickerHeight - selectionImageSize + 5);
+    [self.pickerView addSubview:selectionImageView];
+    
+    self.pickerView.fisheyeFactor = 0.0f;
+    self.pickerView.pickerViewStyle = AKPickerViewStyleFlat;
+    
+    UIImage *monkeyImage = [UIImage imageNamed:@"coveredMouthMonkey"];
+    UIImage *butterfly = [UIImage imageNamed:@"butterflyButton"];
+    UIImage *mehFace = [UIImage imageNamed:@"mehFace"];
+    UIImage *mask = [UIImage imageNamed:@"maskButton"];
+    UIImage *bunny = [UIImage imageNamed:@"rabbit"];
+    UIImage *plane = [UIImage imageNamed:@"planeButton"];
+    UIImage *pizza = [UIImage imageNamed:@"bigNose"];
+    UIImage *water = [UIImage imageNamed:@"bubbleFace"];
+    UIImage *tiger = [UIImage imageNamed:@"tigerFace"];
+    
+    self.pickerImages = @[mehFace, butterfly, mask, bunny, plane, monkeyImage, tiger, water, pizza];
 }
 
-- (void)pauseVIdeo
+- (void)pauseVideo
 {
     [self.sessionHandler stop];
     [self.pickerView removeFromSuperview];

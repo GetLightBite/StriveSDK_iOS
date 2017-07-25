@@ -15,16 +15,7 @@
 
 @property (nonatomic) AVCaptureSession *captureSession;
 @property (nonatomic) dispatch_queue_t captureSessionQueue;
-@property (nonatomic) dispatch_queue_t faceQueue;
 @property (nonatomic) StriveInstance *strive;
-
-@property (nonatomic) NSInteger frameCount;
-@property (nonatomic) NSDate *startTime;
-
-@property (nonatomic) AVAssetWriterInput* writerInput;
-@property (nonatomic) AVAssetWriter *videoWriter;
-@property NSInteger framesWritten;
-@property NSInteger framesSeen;
 
 @end
 
@@ -35,11 +26,8 @@
     self = [super init];
     if (self) {
         _captureSessionQueue = dispatch_queue_create("capture_session_queue", NULL);
-        _faceQueue = dispatch_queue_create("face_queue", NULL);
 
         self.layer = [AVSampleBufferDisplayLayer new];
-        self.framesWritten = 0;
-        self.framesSeen = 0;
         
         self.strive = [StriveInstance shared];
     }
@@ -112,22 +100,17 @@
 didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
        fromConnection:(AVCaptureConnection *)connection
 {
-    int selectedIndex = (int)self.selectedIndex;
-    if (selectedIndex == 0) {
+    if (self.selectedIndex == 0) {
         [self.layer enqueueSampleBuffer:sampleBuffer];
         return;
     }
-    
-    STVFilter f = selectedIndex;
+
+    STVFilter f = self.selectedIndex;
     [self.strive applyFilter:f
                  sampleBuffer:sampleBuffer
                    completion:^(CMSampleBufferRef sampleBuffer) {
                        [self.layer enqueueSampleBuffer:sampleBuffer];
                    }];
-}
-
-- (void)captureOutput:(AVCaptureOutput *)captureOutput didDropSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
-{
 }
 
 @end
