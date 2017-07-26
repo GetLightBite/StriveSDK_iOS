@@ -79,8 +79,7 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
     func captureOutput(_ captureOutput: AVCaptureOutput!,
                        didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
                        from connection: AVCaptureConnection!) {        
-        let f = STVFilter.butterfly
-        //let f : STVFilter = STVFilter(rawValue: selectedIndex)!
+        let f : STVFilter = STVFilter(rawValue: selectedIndex)!
         self.strive!.apply(f,
                            sampleBuffer: sampleBuffer,
                            completion: { (sbb : CMSampleBuffer?) -> Void in
