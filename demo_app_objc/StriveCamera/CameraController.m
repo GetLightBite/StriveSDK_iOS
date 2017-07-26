@@ -75,7 +75,7 @@
                                           selectionImageSize);
     selectionImageView.image = [UIImage imageNamed:@"selectorCircle"];
     selectionImageView.center = CGPointMake(self.view.frame.size.width/2,
-                                            selectionImageSize/2 + pickerHeight - selectionImageSize + 5);
+                                            selectionImageSize/2 + pickerHeight - selectionImageSize - 2);
     [self.pickerView addSubview:selectionImageView];
     
     self.pickerView.fisheyeFactor = 0.0f;
