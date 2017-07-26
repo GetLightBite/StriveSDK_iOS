@@ -73,16 +73,13 @@ You'll need an SDK Key, you can get one here: [https://www.strivesdk.com](https:
 
 **Swift**
 ```swift
-import Strive
-
-...
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // ...other initialization code
 
-    let striveKey = "INSERT_KEY_HERE"
-    StriveInsance.setupWithKEy(striveKey)
-    StriveInstance.shared.prepare()
+    let striveKey = "INSERT_YOUR_KEY_HERE"; // Get one at http://striveSDK.com
+    StriveInstance.setup(withKey: striveKey)
+    StriveInstance.shared().prepare()
 
     return true
 }
@@ -114,6 +111,20 @@ a) Import Strive and create a StriveInstance property
 
 ```
 
+**Swift**
+```swift
+
+@interface YourCameraClass ()
+
+// other properties
+
+let strive = StriveInstance.shared()
+
+
+@end
+
+```
+
 b) Initialize your class' StriveInstance property. This should be done as early in this object's lifecycle (ie. viewDidLoad for UIViewController subclasses, or in the init method for NSObject subclasses).
 
 ```objective-c
@@ -130,6 +141,8 @@ b) Initialize your class' StriveInstance property. This should be done as early 
 
 
 ```
+
+Swift: skip this step ;)
 
 c) Configure the camera to use the 32BGRA pixel format, portraid orientation, and mirroring
 
@@ -154,6 +167,35 @@ c) Configure the camera to use the 32BGRA pixel format, portraid orientation, an
 
 ```
 
+
+**Swift**
+```swift
+
+        let videoDataOutput = AVCaptureVideoDataOutput();
+        
+        videoDataOutput.alwaysDiscardsLateVideoFrames=true
+        videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable : Int(kCVPixelFormatType_32BGRA)] // !!! make sure to use 32BGRA for the pixel format
+        videoDataOutput.setSampleBufferDelegate(self, queue: captureSessionQueue)
+        
+        captureSession.beginConfiguration()
+
+        captureSession = AVCaptureSession()
+        captureSession.sessionPreset = AVCaptureSessionPresetHigh
+        
+        if(captureSession.canAddInput(input)){
+            captureSession.addInput(input);
+        }
+
+        if(captureSession.canAddOutput(videoDataOutput)){
+            captureSession.addOutput(videoDataOutput);
+            
+            let cnx : AVCaptureConnection? = videoDataOutput.connections.first as? AVCaptureConnection
+            cnx?.videoOrientation = AVCaptureVideoOrientation.portrait // !!! make sure to use 32BGRA for the pixel format
+            cnx?.isVideoMirrored = true // !!! make sure to use 32BGRA for the pixel format
+        }
+
+```
+
 d) Start passing frames to Strive to see augmented reality in action! Specify which filter you'd like to see, and provide a callback function that accepts the newly processed frames.
 
 ```objective-c
@@ -174,8 +216,26 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 ```
 
+**Swift**
+```swift
+
+func captureOutput(_ captureOutput: AVCaptureOutput!,
+                   didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
+                   from connection: AVCaptureConnection!) {        
+    let f = STVFilter.butterfly
+    //let f : STVFilter = STVFilter(rawValue: selectedIndex)!
+    self.strive!.apply(f,
+                       sampleBuffer: sampleBuffer,
+                       completion: { (sbb : CMSampleBuffer?) -> Void in
+                        if (sbb != nil) {
+                            self.layer.enqueue(sbb!)
+                        }
+    })
+}
+
+```
+
 ## Celebrate
 
 Build and Run the app, open the bottle, and celebrate!
-
 
