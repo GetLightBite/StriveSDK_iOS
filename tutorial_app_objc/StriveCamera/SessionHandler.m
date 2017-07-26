@@ -8,6 +8,7 @@
 
 #import "SessionHandler.h"
 #import <UIKit/UIKit.h>
+// tutorial marker 2.a - add missing import here
 
 @interface SessionHandler ()
 
@@ -23,6 +24,8 @@
 @property NSInteger framesWritten;
 @property NSInteger framesSeen;
 
+// tutorial marker 2.b - add missing property here
+
 @end
 
 @implementation SessionHandler
@@ -37,6 +40,8 @@
         self.layer = [AVSampleBufferDisplayLayer new];
         self.framesWritten = 0;
         self.framesSeen = 0;
+        
+        // tutorial marker 2.c - add StriveInstance initialization here
     }
     return self;
 }
@@ -61,8 +66,8 @@
     }
     
     AVCaptureVideoDataOutput *videoDataOutput = [[AVCaptureVideoDataOutput alloc] init];
-    NSDictionary *outputSettings = @{ (id)kCVPixelBufferPixelFormatTypeKey : [NSNumber numberWithInteger:kCVPixelFormatType_32BGRA]};
-    videoDataOutput.videoSettings = outputSettings;
+    
+    // tutorial marker 2.d - add the pixel format code to the video output settings
 
     [videoDataOutput setSampleBufferDelegate:self queue:_captureSessionQueue];
 
@@ -107,6 +112,7 @@
 didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
        fromConnection:(AVCaptureConnection *)connection
 {
+    // marker 2.e - replace the next line with the strive filtering code
     [self.layer enqueueSampleBuffer:sampleBuffer];
 }
 

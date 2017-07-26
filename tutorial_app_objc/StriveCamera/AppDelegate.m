@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WelcomeViewController.h"
+// tutorial marker 1.a - add missing import here
 
 @interface AppDelegate ()
 
@@ -25,6 +26,8 @@
     UINavigationController *onboardingNavigation = [[UINavigationController alloc] initWithRootViewController:wc];
     onboardingNavigation.navigationBar.hidden = YES;
     self.window.rootViewController = onboardingNavigation;
+    
+    // tutorial marker 1.b - add StriveInstance initialization code here
     
     [self.window makeKeyAndVisible];
 
