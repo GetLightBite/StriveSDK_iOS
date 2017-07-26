@@ -7,8 +7,10 @@ StriveSDK for iOS makes it dead simple to add live effects to your app’s camer
 
 In this repo, you'll find:
 - Strive.framework: use this to bring augmented reality face filters to your app.
-- DEMO_APP: A demo project that showcases how to use this app.
-- TUTORIAL_APP: A tutorial project you can use to follow along the integration instructions below.
+- demo_app_objc & demo_app_swift: Demo projects that showcases how to use this SDK. Download these, add your SDK key, and run these in release mode[1] to see our filters in action.
+- tutorial_app_objc & tutorial_app_swift: Tutorial projects you can use to follow along the integration instructions below.
+
+1. Look at step 4 of the tutorial below to learn how to run in Release mode
 
 ## Get an SDK Key
 
@@ -21,43 +23,45 @@ You'll need one of these, get one here by selecting a plan: [http://www.strivesd
 
 Follow along with your own project, or use the Tutorial project we've setup (more info below).
 
-## 0 Installation
+## Step 0. Installation
 
-i) Clone this repo to download the framework file, alongside demo and tutorial Xcode projects:
+### i) Clone this repo to download the framework file, alongside demo and tutorial Xcode projects:
 
 ```bash
 git clone https://github.com/GetLightBite/StriveSDK_iOS.git
 open StriveSDK_ios
 ```
-- You'll find our framework at: `demo_app/Strive.framework`
-- You can find the tutorial project at `tutorial_app/StriveCameraTutorial.xcodeproj`. Open it with Xcode, and let's get going!
+- You'll find our framework at: `demo_app_swift/Strive.framework`
+- We have tutorial projects in both Swift and Objective-C. Open either one to get started
+    - Swift version is at `tutorial_app_swift/StriveCameraSwiftTutorial.xcodeproj`
+    - Objective-C version is at `tutorial_app_objc/StriveCameraTutorial.xcodeproj`
 
 
-ii) Drag `Strive.framework` into your project. Make sure "Copy items if needed" is checked. It may take ~10 seconds for the framework to appear in the project directory.
+### ii) Drag `Strive.framework` into your project. Make sure "Copy items if needed" is checked. It may take ~10 seconds for the framework to appear in the project directory.
 ![Alt Text](http://imgur.com/RvQLqJf.gif)
 
 
-iii) In  Project Settings, go to `General tab > Embedded Binaries`. Click the `+` icon and add in Strive.framework.  Do the same in `Linked Frameworks and Libraries` if it's not there automatically.
+### iii) In  Project Settings, go to `General tab > Embedded Binaries`. Click the `+` icon and add in Strive.framework.  Do the same in `Linked Frameworks and Libraries` if it's not there automatically.
 ![Alt Text](http://i.imgur.com/90EojmL.gif)
 
 
-iv) Go to the `Build Settings tab`, search for `bitcode`, and set `Enable Bitcode` to `NO`.
+### iv) Go to the `Build Settings tab`, search for `bitcode`, and set `Enable Bitcode` to `NO`.
 ![Alt Text](http://imgur.com/CNdcDIc.gif)
 
-v) (Swift-Only) You'll need a Bridging Header to use Strive, since it's written in Objective-C.
+### v) (Swift-Only) You'll need a Bridging Header to use Strive, since it's written in Objective-C.
 
-Our tutorial app already has one, but if you're using your own project here's how you can add one: [http://www.learnswiftonline.com/getting-started/adding-swift-bridging-header/](Bridging Header Tutorial)
+Our tutorial app already has one, but if you're using your own project here's how you can add one: [http://www.learnswiftonline.com/getting-started/adding-swift-bridging-header/](http://www.learnswiftonline.com/getting-started/adding-swift-bridging-header/)
 
 Add this line of code to import Strive accrosss your whole project
-> In the Swift Tutorial App, look for `StriveCameraSwift-Bridging-Header.h`
+> In the Swift Tutorial App, look for `StriveCameraSwift-Bridging-Header.h` in the project directory, under `StriveCameraSwiftTutorial/StriveCameraSwift`.
 
-```swift
+```objective-c
 // ... other imports
 
 #import <Strive/Strive.h> // add this line at mark 0.a, near line 7
 ```
 
-## 1. Initialization
+## Step 1. Initialization
 
 Locate your app delegate and initialize the framework in your *application:didFinishLaunchingWithOptions* method. 
 
@@ -93,7 +97,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     // ...other initialization code
 
     // =======
-    NSString *striveKey = @"INSERT_KEY_HERE"; // add these lines at marker 1.b, near line 28
+    NSString *striveKey = @"INSERT_KEY_HERE"; // add these lines at marker 1.b, near line 30
     [StriveInstance setupWithKey:striveKey];
     [[StriveInstance shared] prepare]; // optional, speeds up filter setup later
     // =======
@@ -102,13 +106,13 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-## 2. Integration
+## Step 2. Integration
 
 Go to the controller where you configured your camera settings.
 
 :rotating_light: :rotating_light: These instructions should work if you're using AVFoundation or any library that's a light wrapper around it (like OpenTok's camera implementation). If not, shoot me a note at (seb x strivesdk x com) and I'll be happy to help. :rotating_light: :rotating_light:
 
-i) Create a StriveInstance property
+### i) Create a StriveInstance property
 
 **Swift**
 > Swift: In the tutorial app, this would be in `SessionHandler.swift`
@@ -142,7 +146,7 @@ i) Create a StriveInstance property
 
 ```
 
-ii) (Objective-C only) Initialize your class' StriveInstance property. This should be done as early in this object's lifecycle (ie. viewDidLoad for UIViewController subclasses, or in the init method for NSObject subclasses).
+### ii) (Objective-C only) Initialize your class' StriveInstance property. This should be done as early in this object's lifecycle (ie. viewDidLoad for UIViewController subclasses, or in the init method for NSObject subclasses).
 
 **Objective-C**
 ```objective-c
@@ -161,7 +165,7 @@ ii) (Objective-C only) Initialize your class' StriveInstance property. This shou
 
 > Swift: We already initialized in the previous step
 
-iii) Configure the camera to use the 32BGRA pixel format, portrait orientation, and mirroring
+### iii) Configure the camera to use the 32BGRA pixel format, portrait orientation, and mirroring
 
 
 **Swift**
@@ -171,7 +175,7 @@ iii) Configure the camera to use the 32BGRA pixel format, portrait orientation, 
         videoDataOutput.alwaysDiscardsLateVideoFrames=true
 
         // =========
-        // add the next 2 lines at marker 2.b, near line 41
+        // add the next line at marker 2.b, near line 41
         videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable : Int(kCVPixelFormatType_32BGRA)] // !!! make sure to use 32BGRA for the pixel format
         // =========
         
@@ -192,7 +196,7 @@ iii) Configure the camera to use the 32BGRA pixel format, portrait orientation, 
         }
 
 ```
-
+**Objective-C**
 ```objective-c
 - (void)yourMethodWhereYouConfigureCamera
 
@@ -217,7 +221,7 @@ iii) Configure the camera to use the 32BGRA pixel format, portrait orientation, 
 ```
 
 
-iv) Start passing frames to Strive to see augmented reality in action! Specify which filter you'd like to see, and provide a callback function that accepts the newly processed frames.
+### iv) Start passing frames to Strive to see augmented reality in action! Specify which filter you'd like to see, and provide a callback function that accepts the newly processed frames.
 
 
 **Swift**
@@ -265,7 +269,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 ```
 
-## 3. Switch Release mode
+## Step 3. Switch Release mode
 
 To get a more perspective look at our filters in action, build the app in Release mode. Go to `Product > Scheme > Edit Scheme`. Then change the `Build Configuration` to `Release`, and un-check `Debug Executable`.
 
@@ -273,7 +277,7 @@ To get a more perspective look at our filters in action, build the app in Releas
 
 You'll see the experience users get, without Xcode's debugging overhead slowing down the frame rate.
 
-## 4. Celebrate
+## Step 4. Celebrate
 
 Build and Run the app, open up a bottle of champagne, and celebrate!
 
