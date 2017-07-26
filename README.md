@@ -12,7 +12,7 @@ In this repo, you'll find:
 
 ## Get an SDK Key
 
-You'll need one of these, get one here: [https://www.strivesdk.com](https://www.strivesdk.com). 
+You'll need one of these, get one here: [http://www.strivesdk.com](http://www.strivesdk.com). 
 
 :rotating_light: :rotating_light: We'll only be offering *free SDK keys* for the next 24 hours :rotating_light: :rotating_light:
 
@@ -33,7 +33,7 @@ open StriveSDK_ios
 - You can find the tutorial project at `tutorial_app/StriveCameraTutorial.xcodeproj`. Open it with Xcode, and let's get going!
 
 
-2. Drag `Strive.framework` into your project. Make sure "Copy items if needed" is checked. It might take like 10 seconds for the framework to appear in the project directory.
+2. Drag `Strive.framework` into your project. Make sure "Copy items if needed" is checked. It may take ~10 seconds for the framework to appear in the project directory.
 ![Alt Text](http://imgur.com/RvQLqJf.gif)
 
 
