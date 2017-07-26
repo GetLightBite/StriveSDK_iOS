@@ -12,7 +12,7 @@ In this repo, you'll find:
 
 ## Get an SDK Key
 
-You'll need one of these, get one here: [http://www.strivesdk.com](http://www.strivesdk.com). 
+You'll need one of these, get one here by selecting a plan: [http://www.strivesdk.com](http://www.strivesdk.com). 
 
 :rotating_light: :rotating_light: We'll only be offering *free SDK keys* for the next 24 hours :rotating_light: :rotating_light:
 
@@ -61,7 +61,7 @@ Add this line of code to import Strive accrosss your whole project
 
 Locate your app delegate and initialize the framework in your *application:didFinishLaunchingWithOptions* method. 
 
-You'll need an SDK Key, you can get one here: [https://www.strivesdk.com](https://www.strivesdk.com).
+You'll need an SDK Key, you can get one here by selecting a plan: [https://www.strivesdk.com](https://www.strivesdk.com).
 
 **Swift**
 > Swift: In the tutorial app, this would be at the top of AppDelegate.swift
@@ -72,7 +72,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
     // =======
     // add the following 3 lines at mark 1.a, near line 19
-    let striveKey = "INSERT_YOUR_KEY_HERE"; // Get one at http://striveSDK.com
+    let striveKey = "INSERT_YOUR_KEY_HERE"; // Get one at http://striveSDK.com by selecting a plan
     StriveInstance.setup(withKey: striveKey)
     StriveInstance.shared().prepare()
     // =======
