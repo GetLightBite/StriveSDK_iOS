@@ -12,8 +12,6 @@
 		D66333021F26B1B00087928E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66333001F26B1B00087928E /* Main.storyboard */; };
 		D66333041F26B1B00087928E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66333031F26B1B00087928E /* Assets.xcassets */; };
 		D66333071F26B1B00087928E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66333051F26B1B00087928E /* LaunchScreen.storyboard */; };
-		D66333191F26C5510087928E /* Strive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66333171F26C5420087928E /* Strive.framework */; };
-		D663331A1F26C5510087928E /* Strive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D66333171F26C5420087928E /* Strive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D663331C1F26C6520087928E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663331B1F26C6520087928E /* WelcomeViewController.swift */; };
 		D663331E1F26C9350087928E /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663331D1F26C9350087928E /* CameraController.swift */; };
 		D66333221F26CC7B0087928E /* AKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D66333211F26CC7B0087928E /* AKPickerView.m */; };
@@ -27,7 +25,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D663331A1F26C5510087928E /* Strive.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,7 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D66332F91F26B1B00087928E /* StriveCameraSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StriveCameraSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66332F91F26B1B00087928E /* StriveCameraSwiftTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StriveCameraSwiftTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66332FC1F26B1B00087928E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D66332FE1F26B1B00087928E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D66333011F26B1B00087928E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,7 +40,6 @@
 		D66333061F26B1B00087928E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D66333081F26B1B00087928E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D663330E1F26B1EC0087928E /* StriveCameraSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StriveCameraSwift-Bridging-Header.h"; sourceTree = "<group>"; };
-		D66333171F26C5420087928E /* Strive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Strive.framework; sourceTree = "<group>"; };
 		D663331B1F26C6520087928E /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D663331D1F26C9350087928E /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		D66333201F26CC7B0087928E /* AKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPickerView.h; sourceTree = "<group>"; };
@@ -56,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D66333191F26C5510087928E /* Strive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +61,6 @@
 		D66332F01F26B1B00087928E = {
 			isa = PBXGroup;
 			children = (
-				D66333171F26C5420087928E /* Strive.framework */,
 				D66332FB1F26B1B00087928E /* StriveCameraSwift */,
 				D66332FA1F26B1B00087928E /* Products */,
 			);
@@ -75,7 +69,7 @@
 		D66332FA1F26B1B00087928E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D66332F91F26B1B00087928E /* StriveCameraSwift.app */,
+				D66332F91F26B1B00087928E /* StriveCameraSwiftTutorial.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,9 +104,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D66332F81F26B1B00087928E /* StriveCameraSwift */ = {
+		D66332F81F26B1B00087928E /* StriveCameraSwiftTutorial */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D663330B1F26B1B00087928E /* Build configuration list for PBXNativeTarget "StriveCameraSwift" */;
+			buildConfigurationList = D663330B1F26B1B00087928E /* Build configuration list for PBXNativeTarget "StriveCameraSwiftTutorial" */;
 			buildPhases = (
 				D66332F51F26B1B00087928E /* Sources */,
 				D66332F61F26B1B00087928E /* Frameworks */,
@@ -123,9 +117,9 @@
 			);
 			dependencies = (
 			);
-			name = StriveCameraSwift;
+			name = StriveCameraSwiftTutorial;
 			productName = StriveCameraSwift;
-			productReference = D66332F91F26B1B00087928E /* StriveCameraSwift.app */;
+			productReference = D66332F91F26B1B00087928E /* StriveCameraSwiftTutorial.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,7 +140,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D66332F41F26B1B00087928E /* Build configuration list for PBXProject "StriveCameraSwift" */;
+			buildConfigurationList = D66332F41F26B1B00087928E /* Build configuration list for PBXProject "StriveCameraSwiftTutorial" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -159,7 +153,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D66332F81F26B1B00087928E /* StriveCameraSwift */,
+				D66332F81F26B1B00087928E /* StriveCameraSwiftTutorial */,
 			);
 		};
 /* End PBXProject section */
@@ -350,7 +344,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D66332F41F26B1B00087928E /* Build configuration list for PBXProject "StriveCameraSwift" */ = {
+		D66332F41F26B1B00087928E /* Build configuration list for PBXProject "StriveCameraSwiftTutorial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D66333091F26B1B00087928E /* Debug */,
@@ -359,13 +353,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D663330B1F26B1B00087928E /* Build configuration list for PBXNativeTarget "StriveCameraSwift" */ = {
+		D663330B1F26B1B00087928E /* Build configuration list for PBXNativeTarget "StriveCameraSwiftTutorial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D663330C1F26B1B00087928E /* Debug */,
 				D663330D1F26B1B00087928E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

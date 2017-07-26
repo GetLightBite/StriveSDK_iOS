@@ -15,10 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        let striveKey = "INSERT_YOUR_KEY_HERE"; // Get one at http://striveSDK.com
-        StriveInstance.setup(withKey: striveKey)
-        StriveInstance.shared().prepare()
+
+        // tutorial mark 1.a - add the strive key initialization lines here
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let nav = UINavigationController.init(rootViewController: WelcomeViewController())

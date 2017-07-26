@@ -16,7 +16,7 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
     let captureSessionQueue = DispatchQueue(label: "capture_session_queue")
     var setupCamera = false
     
-    let strive = StriveInstance.shared()
+    // tutorial marker 2.a - add line that creates and initializes the StriveInstance property
     
     func openSession() {
         let deviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInDualCamera, AVCaptureDeviceType.builtInTelephotoCamera,AVCaptureDeviceType.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
@@ -38,18 +38,18 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
         let videoDataOutput = AVCaptureVideoDataOutput();
         
         videoDataOutput.alwaysDiscardsLateVideoFrames=true
-        videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable : Int(kCVPixelFormatType_32BGRA)]
-        videoDataOutput.setSampleBufferDelegate(self, queue: captureSessionQueue)
         
+        // tutorial marker 2.b - add lines that configure the 32BGRA pixel format here
+        
+        
+        videoDataOutput.setSampleBufferDelegate(self, queue: captureSessionQueue)
         captureSession.beginConfiguration()
-
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
         
         if(captureSession.canAddInput(input)){
             captureSession.addInput(input);
         }
-
         if(captureSession.canAddOutput(videoDataOutput)){
             captureSession.addOutput(videoDataOutput);
             
@@ -78,16 +78,10 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
     
     func captureOutput(_ captureOutput: AVCaptureOutput!,
                        didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
-                       from connection: AVCaptureConnection!) {        
-        let f = STVFilter.butterfly
-        //let f : STVFilter = STVFilter(rawValue: selectedIndex)!
-        self.strive!.apply(f,
-                           sampleBuffer: sampleBuffer,
-                           completion: { (sbb : CMSampleBuffer?) -> Void in
-                            if (sbb != nil) {
-                                self.layer.enqueue(sbb!)
-                            }
-        })
+                       from connection: AVCaptureConnection!) {
+        
+        // tutorial marker 2.c - replace the next line with the Strive filtering code!
+        self.layer.enqueue(sampleBuffer) // replace this line
     }
     
 }
