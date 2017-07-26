@@ -14,8 +14,9 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
     var selectedIndex = 0
     var captureSession : AVCaptureSession = AVCaptureSession()
     let captureSessionQueue = DispatchQueue(label: "capture_session_queue")
-    let strive = StriveInstance.shared()
     var setupCamera = false
+    
+    let strive = StriveInstance.shared()
     
     func openSession() {
         let deviceDiscoverySession = AVCaptureDeviceDiscoverySession(deviceTypes: [AVCaptureDeviceType.builtInDualCamera, AVCaptureDeviceType.builtInTelephotoCamera,AVCaptureDeviceType.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: AVCaptureDevicePosition.front)
@@ -77,13 +78,9 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
     
     func captureOutput(_ captureOutput: AVCaptureOutput!,
                        didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
-                       from connection: AVCaptureConnection!) {
-        if (selectedIndex == 0) {
-            self.layer.enqueue(sampleBuffer)
-            return;
-        }
-        
-        let f : STVFilter = STVFilter(rawValue: selectedIndex)!
+                       from connection: AVCaptureConnection!) {        
+        let f = STVFilter.butterfly
+        //let f : STVFilter = STVFilter(rawValue: selectedIndex)!
         self.strive!.apply(f,
                            sampleBuffer: sampleBuffer,
                            completion: { (sbb : CMSampleBuffer?) -> Void in
