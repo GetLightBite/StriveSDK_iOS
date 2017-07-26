@@ -256,7 +256,7 @@ You'll see the experience users get, without Xcode's debugging overhead slowing 
 ## 4. Celebrate
 
 Build and Run the app, open up a bottle of champagne, and celebrate!
-![Alt Text](http://i.imgur.com/UJS3rt6.gif)
+![Alt Text](![Alt Text](https://media.giphy.com/media/rjkJD1v80CjYs/giphy.gif))
 
 
 
