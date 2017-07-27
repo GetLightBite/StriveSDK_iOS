@@ -17,8 +17,8 @@
 		D66332781F25A2730087928E /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332751F25A2730087928E /* CameraController.m */; };
 		D66332791F25A2730087928E /* SessionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332771F25A2730087928E /* SessionHandler.m */; };
 		D663327D1F25A28B0087928E /* AKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D663327C1F25A28B0087928E /* AKPickerView.m */; };
-		D69F10601F29A2F000F81153 /* Strive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69F105E1F29A2EB00F81153 /* Strive.framework */; };
-		D69F10611F29A2F000F81153 /* Strive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D69F105E1F29A2EB00F81153 /* Strive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D69F106C1F29A68D00F81153 /* Strive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69F106A1F29A65500F81153 /* Strive.framework */; };
+		D69F106D1F29A68D00F81153 /* Strive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D69F106A1F29A65500F81153 /* Strive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +28,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D69F10611F29A2F000F81153 /* Strive.framework in Embed Frameworks */,
+				D69F106D1F29A68D00F81153 /* Strive.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,7 +54,7 @@
 		D66332771F25A2730087928E /* SessionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionHandler.m; sourceTree = "<group>"; };
 		D663327B1F25A28B0087928E /* AKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPickerView.h; sourceTree = "<group>"; };
 		D663327C1F25A28B0087928E /* AKPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPickerView.m; sourceTree = "<group>"; };
-		D69F105E1F29A2EB00F81153 /* Strive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Strive.framework; sourceTree = "<group>"; };
+		D69F106A1F29A65500F81153 /* Strive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Strive.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D69F10601F29A2F000F81153 /* Strive.framework in Frameworks */,
+				D69F106C1F29A68D00F81153 /* Strive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +72,7 @@
 		D66332491F25A1F90087928E = {
 			isa = PBXGroup;
 			children = (
-				D69F105E1F29A2EB00F81153 /* Strive.framework */,
+				D69F106A1F29A65500F81153 /* Strive.framework */,
 				D66332541F25A1F90087928E /* StriveCamera */,
 				D66332531F25A1F90087928E /* Products */,
 			);
