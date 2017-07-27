@@ -23,7 +23,7 @@ You'll need one of these, get one here by selecting a plan: [http://www.strivesd
 
 Follow along with your own project, or use the Tutorial project we've setup (more info below).
 
-## Step 0. Installation
+## Step 1. Installation
 
 ### i) Clone this repo to download the framework file, alongside demo and tutorial Xcode projects:
 
@@ -61,7 +61,7 @@ Add this line of code to import Strive accrosss your whole project
 #import <Strive/Strive.h> // add this line at mark 0.a, near line 7
 ```
 
-## Step 1. Initialization
+## Step 2. Initialization
 
 Locate your app delegate and initialize the framework in your *application:didFinishLaunchingWithOptions* method. 
 
@@ -106,7 +106,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-## Step 2. Integration
+## Step 3. Integration
 
 Go to the controller where you configured your camera settings.
 
@@ -269,7 +269,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 ```
 
-## Step 3. Switch Release mode
+## Step 4. Switch Release mode
 
 To get a more perspective look at our filters in action, build the app in Release mode. Go to `Product > Scheme > Edit Scheme`. Then change the `Build Configuration` to `Release`, and un-check `Debug Executable`.
 
@@ -277,7 +277,7 @@ To get a more perspective look at our filters in action, build the app in Releas
 
 You'll see the experience users get, without Xcode's debugging overhead slowing down the frame rate.
 
-## Step 4. Celebrate
+## Step 5. Celebrate
 
 Build and Run the app, open up a bottle of champagne, and celebrate!
 
