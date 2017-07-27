@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let striveKey = "INSERT_YOUR_KEY_HERE"; // Get one at http://striveSDK.com
+        let striveKey = "INSERT_YOUR_KEY_HERE" // Get one at http://striveSDK.com
         StriveInstance.setup(withKey: striveKey)
         StriveInstance.shared().prepare()
         

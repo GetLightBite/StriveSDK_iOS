@@ -31,11 +31,11 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
         do{
             input = try AVCaptureDeviceInput(device: device)
         }catch{
-            print("exception!");
+            print("exception!")
             return
         }
         
-        let videoDataOutput = AVCaptureVideoDataOutput();
+        let videoDataOutput = AVCaptureVideoDataOutput()
         
         videoDataOutput.alwaysDiscardsLateVideoFrames=true
         videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable : Int(kCVPixelFormatType_32BGRA)]
@@ -47,11 +47,11 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
         
         if(captureSession.canAddInput(input)){
-            captureSession.addInput(input);
+            captureSession.addInput(input)
         }
 
         if(captureSession.canAddOutput(videoDataOutput)){
-            captureSession.addOutput(videoDataOutput);
+            captureSession.addOutput(videoDataOutput)
             
             let cnx : AVCaptureConnection? = videoDataOutput.connections.first as? AVCaptureConnection
             cnx?.videoOrientation = AVCaptureVideoOrientation.portrait

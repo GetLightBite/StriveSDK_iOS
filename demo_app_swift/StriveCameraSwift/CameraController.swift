@@ -65,18 +65,18 @@ class CameraController: UIViewController, AKPickerViewDelegate, AKPickerViewData
         selectionImageView.center = CGPoint.init(x: x, y: y)
         self.pickerView.addSubview(selectionImageView)
         
-        self.pickerView.fisheyeFactor = 0;
-        self.pickerView.pickerViewStyle = AKPickerViewStyle.styleFlat;
+        self.pickerView.fisheyeFactor = 0
+        self.pickerView.pickerViewStyle = AKPickerViewStyle.styleFlat
 
-        let monkeyImage = UIImage.init(named:"coveredMouthMonkey");
-        let butterfly = UIImage.init(named:"butterflyButton");
-        let mehFace = UIImage.init(named:"mehFace");
-        let mask = UIImage.init(named:"maskButton");
-        let bunny = UIImage.init(named:"rabbit");
-        let plane = UIImage.init(named:"planeButton");
-        let pizza = UIImage.init(named:"bigNose");
-        let water = UIImage.init(named:"bubbleFace");
-        let tiger = UIImage.init(named:"tigerFace");
+        let monkeyImage = UIImage.init(named:"coveredMouthMonkey")
+        let butterfly = UIImage.init(named:"butterflyButton")
+        let mehFace = UIImage.init(named:"mehFace")
+        let mask = UIImage.init(named:"maskButton")
+        let bunny = UIImage.init(named:"rabbit")
+        let plane = UIImage.init(named:"planeButton")
+        let pizza = UIImage.init(named:"bigNose")
+        let water = UIImage.init(named:"bubbleFace")
+        let tiger = UIImage.init(named:"tigerFace")
 
         self.pickerImages = [mehFace!, butterfly!, mask!, bunny!, plane!, monkeyImage!, tiger!, water!, pizza!]
     }
@@ -108,7 +108,7 @@ class CameraController: UIViewController, AKPickerViewDelegate, AKPickerViewData
     func pickerView(_ pickerView: AKPickerView!, imageForItem item: Int) -> UIImage! {
         let image = self.pickerImages[item]
         let imageSize = self.view.frame.size.width/5
-        let newHeight = image.size.height * (imageSize/image.size.width);
+        let newHeight = image.size.height * (imageSize/image.size.width)
         
         let newSize = CGSize.init(width: imageSize, height: newHeight)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)

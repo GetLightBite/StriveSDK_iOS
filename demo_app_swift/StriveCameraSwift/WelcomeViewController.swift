@@ -48,7 +48,7 @@ class WelcomeViewController: UIViewController {
         let spinner = UIActivityIndicatorView.init(
             activityIndicatorStyle: UIActivityIndicatorViewStyle.white
         )
-        spinner.center = self.view.center;
+        spinner.center = self.view.center
         spinner.startAnimating()
         self.view.addSubview(spinner)
     }
