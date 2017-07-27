@@ -2,7 +2,7 @@
 
 # StriveSDK: Augmented Reality Face Filters SDK for iOS
 
-StriveSDK for iOS makes it dead simple to add live effects to your app’s camera experience. With one line of code, you’ll help users look instantly more photogenic, creative, and comfortable with the camera.
+StriveSDK for iOS makes it dead simple to add live effects to your app’s camera experience. With one line of code, you’ll help users instantly look more photogenic, creative, and comfortable with the camera.
 
 
 In this repo, you'll find:
@@ -76,7 +76,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
     // =======
     // add the following 3 lines at mark 1.a, near line 19
-    let striveKey = "INSERT_YOUR_KEY_HERE"; // Get one at http://striveSDK.com by selecting a plan
+    let striveKey = "INSERT_YOUR_KEY_HERE" // Get one at http://striveSDK.com by selecting a plan
     StriveInstance.setup(withKey: striveKey)
     StriveInstance.shared().prepare()
     // =======
@@ -170,7 +170,7 @@ Go to the controller where you configured your camera settings.
 
 **Swift**
 ```swift
-        let videoDataOutput = AVCaptureVideoDataOutput();
+        let videoDataOutput = AVCaptureVideoDataOutput()
         
         videoDataOutput.alwaysDiscardsLateVideoFrames=true
 
@@ -184,11 +184,11 @@ Go to the controller where you configured your camera settings.
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
         
-        if(captureSession.canAddInput(input)){
-            captureSession.addInput(input);
+        if (captureSession.canAddInput(input)){
+            captureSession.addInput(input)
         }
-        if(captureSession.canAddOutput(videoDataOutput)){
-            captureSession.addOutput(videoDataOutput);
+        if (captureSession.canAddOutput(videoDataOutput)){
+            captureSession.addOutput(videoDataOutput)
             
             let cnx : AVCaptureConnection? = videoDataOutput.connections.first as? AVCaptureConnection
             cnx?.videoOrientation = AVCaptureVideoOrientation.portrait // !!! make sure to use portrait orientation
