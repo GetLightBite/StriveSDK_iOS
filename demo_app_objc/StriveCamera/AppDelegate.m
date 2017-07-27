@@ -22,7 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor blackColor];
     
-    NSString *striveKey = @"INSERT_YOUR_KEY_HERE"; // Get one at http://striveSDK.com
+    NSString *striveKey = @"eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoiMjAxNy0wNy0yNCAyMToyMTo1OSIsImlkIjoxNn0.ynunIJ3_XXynjcvz3x-bBU1pAw5m043CnK--Vr_-opI"; // Get one at http://striveSDK.com
     [StriveInstance setupWithKey:striveKey];
     [[StriveInstance shared] prepare];
     
