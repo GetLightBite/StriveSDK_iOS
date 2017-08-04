@@ -29,6 +29,6 @@ typedef NS_ENUM(NSInteger, STVFilter) {
 
 - (void)applyFilter:(STVFilter)filterCode
        sampleBuffer:(CMSampleBufferRef)sampleBuffer
-         completion:(void(^)(CMSampleBufferRef sampleBuffer))completion;
+         completion:(void(^)(CMSampleBufferRef sampleBuffer, NSDictionary *mouthData))completion;
 
 @end

@@ -108,7 +108,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     STVFilter f = self.selectedIndex;
     [self.strive applyFilter:f
                  sampleBuffer:sampleBuffer
-                   completion:^(CMSampleBufferRef sampleBuffer) {
+                   completion:^(CMSampleBufferRef sampleBuffer, NSDictionary *d) {
+                       NSLog(@"d: %@", d);
                        [self.layer enqueueSampleBuffer:sampleBuffer];
                    }];
 }
