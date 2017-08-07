@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D605E7DA1F382B1E00FF8BDE /* PreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D605E7D91F382B1E00FF8BDE /* PreviewController.m */; };
 		D66332571F25A1F90087928E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332561F25A1F90087928E /* main.m */; };
 		D663325A1F25A1F90087928E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332591F25A1F90087928E /* AppDelegate.m */; };
 		D663325D1F25A1F90087928E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D663325C1F25A1F90087928E /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D605E7D81F382B1E00FF8BDE /* PreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewController.h; sourceTree = "<group>"; };
+		D605E7D91F382B1E00FF8BDE /* PreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewController.m; sourceTree = "<group>"; };
 		D66332521F25A1F90087928E /* StriveCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StriveCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66332561F25A1F90087928E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D66332581F25A1F90087928E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				D66332591F25A1F90087928E /* AppDelegate.m */,
 				D66332741F25A2730087928E /* CameraController.h */,
 				D66332751F25A2730087928E /* CameraController.m */,
+				D605E7D81F382B1E00FF8BDE /* PreviewController.h */,
+				D605E7D91F382B1E00FF8BDE /* PreviewController.m */,
 				D66332761F25A2730087928E /* SessionHandler.h */,
 				D66332771F25A2730087928E /* SessionHandler.m */,
 				D663325B1F25A1F90087928E /* ViewController.h */,
@@ -158,6 +163,7 @@
 				TargetAttributes = {
 					D66332511F25A1F90087928E = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5Y48ZT9Y89;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -202,6 +208,7 @@
 				D66332781F25A2730087928E /* CameraController.m in Sources */,
 				D663325D1F25A1F90087928E /* ViewController.m in Sources */,
 				D66332731F25A2690087928E /* WelcomeViewController.m in Sources */,
+				D605E7DA1F382B1E00FF8BDE /* PreviewController.m in Sources */,
 				D66332791F25A2730087928E /* SessionHandler.m in Sources */,
 				D663325A1F25A1F90087928E /* AppDelegate.m in Sources */,
 				D66332571F25A1F90087928E /* main.m in Sources */,
@@ -324,7 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5Y48ZT9Y89;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,7 +348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5Y48ZT9Y89;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -7,12 +7,16 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
+#import "CameraController.h"
 #import <Foundation/Foundation.h>
 
+@class CameraController;
 @interface SessionHandler : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureMetadataOutputObjectsDelegate>
 
 @property (nonatomic) AVSampleBufferDisplayLayer *layer;
 @property (nonatomic) NSInteger selectedIndex;
+@property (nonatomic) BOOL takePhoto;
+@property (nonatomic) CameraController *camera;
 
 - (void)openSession;
 - (void)start;

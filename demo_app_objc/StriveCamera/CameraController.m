@@ -7,12 +7,14 @@
 //
 
 #import "CameraController.h"
+#import "PreviewController.h"
 
 @interface CameraController ()
 
 @property (nonatomic) SessionHandler *sessionHandler;
 @property (nonatomic) AKPickerView *pickerView;
 @property (nonatomic) NSArray<UIImage *> *pickerImages;
+@property (nonatomic) UIActivityIndicatorView *spinner;
 
 @end
 
@@ -81,6 +83,20 @@
     self.pickerView.fisheyeFactor = 0.0f;
     self.pickerView.pickerViewStyle = AKPickerViewStyleFlat;
     
+    UIButton *takePhotoButton = [UIButton new];
+    takePhotoButton.backgroundColor = [UIColor clearColor];
+    takePhotoButton.frame = CGRectMake(0, 0, 55, 55);
+    takePhotoButton.center = selectionImageView.center;
+    [takePhotoButton addTarget:self
+                        action:@selector(tappedTakePicture)
+              forControlEvents:UIControlEventTouchUpInside];
+    [self.pickerView addSubview:takePhotoButton];
+    
+    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.spinner.center = takePhotoButton.center;
+    [self.spinner stopAnimating];
+    [self.pickerView addSubview:self.spinner];
+
     UIImage *monkeyImage = [UIImage imageNamed:@"coveredMouthMonkey"];
     UIImage *butterfly = [UIImage imageNamed:@"butterflyButton"];
     UIImage *mehFace = [UIImage imageNamed:@"mehFace"];
@@ -103,6 +119,7 @@
 - (void)resume
 {
     self.sessionHandler = [SessionHandler new];
+    self.sessionHandler.camera = self;
     [self.sessionHandler openSession];
 
     AVSampleBufferDisplayLayer *layer = self.sessionHandler.layer;
@@ -139,6 +156,25 @@
      didSelectItem:(NSInteger)item
 {
     self.sessionHandler.selectedIndex = item;
+}
+
+# pragma mark - User Actions
+
+- (void)tappedTakePicture
+{
+    self.sessionHandler.takePhoto = YES;
+    [self.spinner startAnimating];
+}
+
+- (void)seePreviewWithImage:(UIImage *)image
+{
+    PreviewController *previewController = [PreviewController new];
+    previewController.image = image;
+    [self presentViewController:previewController
+                       animated:YES
+                     completion:^{
+                         [self.spinner stopAnimating];
+                     }];
 }
 
 @end

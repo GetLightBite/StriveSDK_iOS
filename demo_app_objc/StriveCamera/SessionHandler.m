@@ -110,7 +110,45 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                  sampleBuffer:sampleBuffer
                    completion:^(CMSampleBufferRef sampleBuffer) {
                        [self.layer enqueueSampleBuffer:sampleBuffer];
+                       if (self.takePhoto) {
+                           self.takePhoto = NO;
+                           [self capturePhoto:sampleBuffer];
+                       }
                    }];
 }
+
+- (void)capturePhoto:(CMSampleBufferRef)sampleBuffer
+{
+    UIImage *image = [SessionHandler imageFromSampleBuffer:(__bridge CMSampleBufferRef)((__bridge id)(sampleBuffer))];
+    [self.camera seePreviewWithImage:image];
+}
+
++ (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
+{
+    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+    
+    CVPixelBufferLockBaseAddress(imageBuffer,0);
+    
+    uint8_t *baseAddress = (uint8_t *)CVPixelBufferGetBaseAddress(imageBuffer);
+    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+    size_t width = CVPixelBufferGetWidth(imageBuffer);
+    size_t height = CVPixelBufferGetHeight(imageBuffer);
+    
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef newContext = CGBitmapContextCreate(baseAddress, width, height, 8, bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+    
+    CGImageRef newImage = CGBitmapContextCreateImage(newContext);
+    
+    CGContextRelease(newContext);
+    CGColorSpaceRelease(colorSpace);
+    
+    UIImage *newUIImage = [UIImage imageWithCGImage:newImage];
+    
+    CFRelease(newImage);
+    
+    return newUIImage;
+}
+
 
 @end

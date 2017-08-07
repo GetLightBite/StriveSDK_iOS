@@ -13,4 +13,6 @@
 
 @interface CameraController : UIViewController <AKPickerViewDataSource, AKPickerViewDelegate>
 
+- (void)seePreviewWithImage:(UIImage *)image;
+
 @end
