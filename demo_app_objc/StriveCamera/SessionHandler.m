@@ -105,7 +105,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         return;
     }
 
-    STVFilter f = self.selectedIndex;
+    STVFilter f = self.selectedIndex + 8;
     [self.strive applyFilter:f
                  sampleBuffer:sampleBuffer
                    completion:^(CMSampleBufferRef sampleBuffer) {

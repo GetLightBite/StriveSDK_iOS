@@ -97,17 +97,12 @@
     [self.spinner stopAnimating];
     [self.pickerView addSubview:self.spinner];
 
-    UIImage *monkeyImage = [UIImage imageNamed:@"coveredMouthMonkey"];
-    UIImage *butterfly = [UIImage imageNamed:@"butterflyButton"];
     UIImage *mehFace = [UIImage imageNamed:@"mehFace"];
-    UIImage *mask = [UIImage imageNamed:@"maskButton"];
-    UIImage *bunny = [UIImage imageNamed:@"rabbit"];
-    UIImage *plane = [UIImage imageNamed:@"planeButton"];
-    UIImage *pizza = [UIImage imageNamed:@"bigNose"];
-    UIImage *water = [UIImage imageNamed:@"bubbleFace"];
-    UIImage *tiger = [UIImage imageNamed:@"tigerFace"];
+    UIImage *irish1 = [UIImage imageNamed:@"irish1"];
+    UIImage *irish2 = [UIImage imageNamed:@"irish2"];
+    UIImage *irish3 = [UIImage imageNamed:@"irish3"];
     
-    self.pickerImages = @[mehFace, butterfly, mask, bunny, plane, monkeyImage, tiger, water, pizza];
+    self.pickerImages = @[mehFace, irish3, irish1, irish2];
 }
 
 - (void)pauseVideo

@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self setupImage];
     [self setupBackButton];
+    [self setupImage];
 }
 
 - (void)setupImage
@@ -26,7 +26,8 @@
     UIImageView *imageView = [UIImageView new];
     imageView.frame = self.view.frame;
     imageView.image = self.image;
-    [self.view addSubview:imageView];
+    [self.view insertSubview:imageView
+                     atIndex:0];
 }
 
 - (void)setupBackButton
