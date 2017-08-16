@@ -16,8 +16,8 @@
 		D663331E1F26C9350087928E /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D663331D1F26C9350087928E /* CameraController.swift */; };
 		D66333221F26CC7B0087928E /* AKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D66333211F26CC7B0087928E /* AKPickerView.m */; };
 		D66333241F26CCEC0087928E /* SessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66333231F26CCEC0087928E /* SessionHandler.swift */; };
-		D69F10671F29A60D00F81153 /* Strive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D69F10661F29A60D00F81153 /* Strive.framework */; };
-		D69F10691F29A61200F81153 /* Strive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D69F10661F29A60D00F81153 /* Strive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D66A83601F44ECFC007AFCF2 /* Strive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66A835F1F44ECF4007AFCF2 /* Strive.framework */; };
+		D66A83611F44ECFC007AFCF2 /* Strive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D66A835F1F44ECF4007AFCF2 /* Strive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D69F10691F29A61200F81153 /* Strive.framework in Embed Frameworks */,
+				D66A83611F44ECFC007AFCF2 /* Strive.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,7 +48,7 @@
 		D66333201F26CC7B0087928E /* AKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPickerView.h; sourceTree = "<group>"; };
 		D66333211F26CC7B0087928E /* AKPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPickerView.m; sourceTree = "<group>"; };
 		D66333231F26CCEC0087928E /* SessionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionHandler.swift; sourceTree = "<group>"; };
-		D69F10661F29A60D00F81153 /* Strive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Strive.framework; sourceTree = "<group>"; };
+		D66A835F1F44ECF4007AFCF2 /* Strive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Strive.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D69F10671F29A60D00F81153 /* Strive.framework in Frameworks */,
+				D66A83601F44ECFC007AFCF2 /* Strive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +66,7 @@
 		D66332F01F26B1B00087928E = {
 			isa = PBXGroup;
 			children = (
-				D69F10661F29A60D00F81153 /* Strive.framework */,
+				D66A835F1F44ECF4007AFCF2 /* Strive.framework */,
 				D66332FB1F26B1B00087928E /* StriveCameraSwift */,
 				D66332FA1F26B1B00087928E /* Products */,
 			);
@@ -140,6 +140,7 @@
 				TargetAttributes = {
 					D66332F81F26B1B00087928E = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5Y48ZT9Y89;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -310,7 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5Y48ZT9Y89;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -331,7 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5Y48ZT9Y89;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

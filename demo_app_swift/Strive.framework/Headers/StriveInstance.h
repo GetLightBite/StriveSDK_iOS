@@ -11,12 +11,9 @@
 
 typedef NS_ENUM(NSInteger, STVFilter) {
     STVFilterNone = 0,
-    STVFilterButterfly = 1,
     STVFilterGoldenMask = 2,
-    STVFilterBunny = 3,
     STVFilterMesh = 4,
     STVFilterMonkey = 5,
-    STVFilterCheetah = 6,
     STVFilterBubbleHead = 7,
     STVFilterDistortedFace = 8
 };

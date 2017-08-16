@@ -79,7 +79,27 @@ class SessionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, AV
     func captureOutput(_ captureOutput: AVCaptureOutput!,
                        didOutputSampleBuffer sampleBuffer: CMSampleBuffer!,
                        from connection: AVCaptureConnection!) {        
-        let f : STVFilter = STVFilter(rawValue: selectedIndex)!
+        var f : STVFilter = STVFilter.none;
+        switch selectedIndex {
+        case 1:
+            f = STVFilter.goldenMask;
+            break;
+        case 2:
+            f = STVFilter.mesh;
+            break;
+        case 3:
+            f = STVFilter.monkey;
+            break;
+        case 4:
+            f = STVFilter.bubbleHead;
+            break;
+        case 5:
+            f = STVFilter.distortedFace;
+            break;
+        default:
+            break;
+        }
+        
         self.strive!.apply(f,
                            sampleBuffer: sampleBuffer,
                            completion: { (sbb : CMSampleBuffer?) -> Void in

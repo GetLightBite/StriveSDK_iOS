@@ -69,16 +69,13 @@ class CameraController: UIViewController, AKPickerViewDelegate, AKPickerViewData
         self.pickerView.pickerViewStyle = AKPickerViewStyle.styleFlat
 
         let monkeyImage = UIImage.init(named:"coveredMouthMonkey")
-        let butterfly = UIImage.init(named:"butterflyButton")
         let mehFace = UIImage.init(named:"mehFace")
         let mask = UIImage.init(named:"maskButton")
-        let bunny = UIImage.init(named:"rabbit")
         let plane = UIImage.init(named:"planeButton")
         let pizza = UIImage.init(named:"bigNose")
         let water = UIImage.init(named:"bubbleFace")
-        let tiger = UIImage.init(named:"tigerFace")
 
-        self.pickerImages = [mehFace!, butterfly!, mask!, bunny!, plane!, monkeyImage!, tiger!, water!, pizza!]
+        self.pickerImages = [mehFace!, mask!, plane!, monkeyImage!, water!, pizza!]
     }
     
     func pauseVideo() {
