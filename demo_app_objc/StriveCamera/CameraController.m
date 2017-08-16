@@ -82,16 +82,13 @@
     self.pickerView.pickerViewStyle = AKPickerViewStyleFlat;
     
     UIImage *monkeyImage = [UIImage imageNamed:@"coveredMouthMonkey"];
-    UIImage *butterfly = [UIImage imageNamed:@"butterflyButton"];
     UIImage *mehFace = [UIImage imageNamed:@"mehFace"];
     UIImage *mask = [UIImage imageNamed:@"maskButton"];
-    UIImage *bunny = [UIImage imageNamed:@"rabbit"];
     UIImage *plane = [UIImage imageNamed:@"planeButton"];
     UIImage *pizza = [UIImage imageNamed:@"bigNose"];
     UIImage *water = [UIImage imageNamed:@"bubbleFace"];
-    UIImage *tiger = [UIImage imageNamed:@"tigerFace"];
     
-    self.pickerImages = @[mehFace, butterfly, mask, bunny, plane, monkeyImage, tiger, water, pizza];
+    self.pickerImages = @[mehFace, mask, plane, monkeyImage, water, pizza];
 }
 
 - (void)pauseVideo

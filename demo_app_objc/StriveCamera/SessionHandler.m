@@ -105,7 +105,26 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         return;
     }
 
-    STVFilter f = self.selectedIndex;
+    STVFilter f;
+    switch (self.selectedIndex) {
+        case 1:
+            f = STVFilterGoldenMask;
+            break;
+        case 2:
+            f = STVFilterMesh;
+            break;
+        case 3:
+            f = STVFilterMonkey;
+            break;
+        case 4:
+            f = STVFilterBubbleHead;
+            break;
+        case 5:
+            f = STVFilterDistortedFace;
+            break;
+        default:
+            break;
+    }
     [self.strive applyFilter:f
                  sampleBuffer:sampleBuffer
                    completion:^(CMSampleBufferRef sampleBuffer) {
