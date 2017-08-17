@@ -91,7 +91,7 @@
     UIImage *water = [UIImage imageNamed:@"bubbleFace"];
     UIImage *tiger = [UIImage imageNamed:@"tigerFace"];
     
-    self.pickerImages = @[mehFace, butterfly, mask, bunny, plane, monkeyImage, tiger, water, pizza];
+    self.pickerImages = @[mehFace, butterfly, mask, bunny, plane, monkeyImage, tiger, water, pizza, mehFace];
 }
 
 - (void)pauseVideo

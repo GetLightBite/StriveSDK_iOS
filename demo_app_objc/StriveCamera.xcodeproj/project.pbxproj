@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D60570F31F34726900A73E3C /* Strive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60570F21F34726900A73E3C /* Strive.framework */; };
-		D60570F41F34726F00A73E3C /* Strive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D60570F21F34726900A73E3C /* Strive.framework */; };
-		D60570F51F34726F00A73E3C /* Strive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D60570F21F34726900A73E3C /* Strive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D66332571F25A1F90087928E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332561F25A1F90087928E /* main.m */; };
 		D663325A1F25A1F90087928E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332591F25A1F90087928E /* AppDelegate.m */; };
 		D663325D1F25A1F90087928E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D663325C1F25A1F90087928E /* ViewController.m */; };
@@ -20,6 +17,8 @@
 		D66332781F25A2730087928E /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332751F25A2730087928E /* CameraController.m */; };
 		D66332791F25A2730087928E /* SessionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D66332771F25A2730087928E /* SessionHandler.m */; };
 		D663327D1F25A28B0087928E /* AKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D663327C1F25A28B0087928E /* AKPickerView.m */; };
+		D6672A351F45A4FD007DA6F8 /* Strive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6672A341F45A4F9007DA6F8 /* Strive.framework */; };
+		D6672A361F45A4FD007DA6F8 /* Strive.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6672A341F45A4F9007DA6F8 /* Strive.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +28,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D60570F51F34726F00A73E3C /* Strive.framework in Embed Frameworks */,
+				D6672A361F45A4FD007DA6F8 /* Strive.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,7 +36,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D60570F21F34726900A73E3C /* Strive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Strive.framework; sourceTree = "<group>"; };
 		D66332521F25A1F90087928E /* StriveCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StriveCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66332561F25A1F90087928E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D66332581F25A1F90087928E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +54,7 @@
 		D66332771F25A2730087928E /* SessionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionHandler.m; sourceTree = "<group>"; };
 		D663327B1F25A28B0087928E /* AKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPickerView.h; sourceTree = "<group>"; };
 		D663327C1F25A28B0087928E /* AKPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPickerView.m; sourceTree = "<group>"; };
+		D6672A341F45A4F9007DA6F8 /* Strive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Strive.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D60570F31F34726900A73E3C /* Strive.framework in Frameworks */,
-				D60570F41F34726F00A73E3C /* Strive.framework in Frameworks */,
+				D6672A351F45A4FD007DA6F8 /* Strive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +72,7 @@
 		D66332491F25A1F90087928E = {
 			isa = PBXGroup;
 			children = (
-				D60570F21F34726900A73E3C /* Strive.framework */,
+				D6672A341F45A4F9007DA6F8 /* Strive.framework */,
 				D66332541F25A1F90087928E /* StriveCamera */,
 				D66332531F25A1F90087928E /* Products */,
 			);

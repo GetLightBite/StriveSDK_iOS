@@ -18,7 +18,8 @@ typedef NS_ENUM(NSInteger, STVFilter) {
     STVFilterMonkey = 5,
     STVFilterCheetah = 6,
     STVFilterBubbleHead = 7,
-    STVFilterDistortedFace = 8
+    STVFilterDistortedFace = 8,
+    STVFilterIdentity = 9
 };
 
 @interface StriveInstance : NSObject
