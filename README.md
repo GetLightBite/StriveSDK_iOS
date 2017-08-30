@@ -1,4 +1,4 @@
-![Alt Text](http://imgur.com/0LBJMTL.gif)
+![Alt Text](http://i.imgur.com/c6zm4tN.gif)
 
 # StriveSDK: Augmented Reality Face Filters SDK for iOS
 
